@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_persona" id="9C88A5B5-9824-237F-ABB1-6C0782A1A077">
+<Attribute name="cui" id="9C88A5B5-9824-237F-ABB1-6C0782A1A077">
 <createdBy>ldecast</createdBy>
 <createdTime>2022-04-11 17:18:08 UTC</createdTime>
 <ownerDesignName>Modelo</ownerDesignName>
@@ -94,15 +94,15 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_acta" id="44D9FCF4-EEB6-A13A-F865-E26E45AD1568">
-<createdBy>ldecast</createdBy>
-<createdTime>2022-04-11 17:38:16 UTC</createdTime>
-<generatorID>B6857BBF-E498-A810-B52D-F5A6C5ED8B37</generatorID>
+<Attribute name="id_estado" id="036AB103-4054-5742-F4EC-E1D150D03CBE">
+<createdBy>root</createdBy>
+<createdTime>2022-04-12 21:16:59 UTC</createdTime>
+<generatorID>94ACF593-E55E-3EFD-F810-26AE8671FC52</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
 </engineerTo>
-<referedAttribute>53F73BB8-2ACE-E632-C498-C0AFD8934051</referedAttribute>
+<referedAttribute>12F12338-E60F-7F5F-AF82-56F988E6F07B</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>

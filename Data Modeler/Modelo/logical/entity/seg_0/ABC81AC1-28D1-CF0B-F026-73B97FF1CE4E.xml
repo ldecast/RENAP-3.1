@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="ABC81AC1-28D1-CF0B-F026-73B97FF1CE4E" name="ESTADO_CIVIL">
+<createdBy>root</createdBy>
+<createdTime>2022-04-12 21:15:48 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_estado" id="12F12338-E60F-7F5F-AF82-56F988E6F07B">
+<createdBy>root</createdBy>
+<createdTime>2022-04-12 21:15:53 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="B1C666B5-B74D-E4EB-4177-66DB7F777EF3">
+<createdBy>root</createdBy>
+<createdTime>2022-04-12 21:16:09 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="871C23DB-129B-D602-A388-C647759824C2" name="ESTADO_CIVIL PK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-12 21:16:07 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>12F12338-E60F-7F5F-AF82-56F988E6F07B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

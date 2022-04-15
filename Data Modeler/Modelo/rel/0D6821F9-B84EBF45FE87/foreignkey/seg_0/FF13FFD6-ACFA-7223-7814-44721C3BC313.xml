@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FF13FFD6-ACFA-7223-7814-44721C3BC313" containerWithKeyObject="E9686ED9-23E0-9A42-EAE5-FCD7EF9BF575" localFKIndex="514E451C-AF0A-7F9F-28BD-ED3950ED25D6" name="ACTA_MATRIMONIO_PERSONA_FKv2">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>75FBFF5F-E80B-3CEA-741E-70E2462406DB</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<referredTableLongName>PERSONA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7AE0E243-3C91-1D94-8463-63F065B2A3D6</referredTableID>
+<keyObject>0FF216E7-D0C6-724B-BE7C-7E19BE761025</keyObject>
+<referredKeyID>0FF216E7-D0C6-724B-BE7C-7E19BE761025</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>cui</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

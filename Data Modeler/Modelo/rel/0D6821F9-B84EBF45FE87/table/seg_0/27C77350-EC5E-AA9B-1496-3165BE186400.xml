@@ -1,0 +1,145 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="27C77350-EC5E-AA9B-1496-3165BE186400" name="ACTA_NACIMIENTO">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>B27B38CF-7754-C429-3E85-8EAE641A6CA2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_acta" id="4B6AC089-E6AA-E0E6-8A69-BE19D8C45CF8">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>53F73BB8-2ACE-E632-C498-C0AFD8934051</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cui_madre" id="8A80EC6B-4677-E245-E328-9D6AFFC1143D">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>71DCC658-3091-9C53-C568-640897B49C6B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cui_padre" id="FEE23BA4-FFF4-6F4F-1895-EF7EDBA6DE4E">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>5ADCC5F7-9416-1F84-E026-36AAE30591F2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_nacimiento" id="12A9F28C-47E0-07B5-7B5F-49CA74D35CF0">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>6E59E63A-DD63-90DB-A2E7-F4442B0B806D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genero" id="1C82DD93-3D5B-7C86-E59E-1A84836760D7">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>82786E0F-85C8-7995-A6F8-25FEDF2E42D6</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MUNICIPIO_id_municipio" id="E22C761A-67CF-3B95-ECC4-86B3BA1494C2">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>7C12685D-0605-08EE-0E7D-A3ABF017E4C1</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5B8305D8-E625-F9AF-DB73-DA29D9A73578" referredColumn="B3E867EB-1FDF-9FB4-AD37-24E68B00F7D3"/>
+</associations>
+</Column>
+<Column name="PERSONA_cui" id="2AE3A67B-9DF0-8AAA-ADEF-7805EAD30169">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>86195F73-A67B-0C9F-7DAA-E7510147E688</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7E62E778-8E67-C118-F2F0-99D1B009955A" referredColumn="A008160B-EA88-27C5-E961-BA799732D625"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="677AF582-4F28-6519-F97D-C8FB75C6CCBB" name="ACTA_NACIMIENTO_PK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>371CABAF-E84A-1FEF-035C-E82D3FBA603E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4B6AC089-E6AA-E0E6-8A69-BE19D8C45CF8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="97F51F75-C268-C7FC-9AA0-826C0D8C4B99" name="ACTA_NACIMIENTO__IDX">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>B84BD055-277F-79B2-51D4-20282D79BF38</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="2AE3A67B-9DF0-8AAA-ADEF-7805EAD30169"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F0DF294C-66D2-78BC-24F9-1CC9376A8FD2" name="ACTA_NACIMIENTO_PERSONA_FK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>B84BD055-277F-79B2-51D4-20282D79BF38</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2AE3A67B-9DF0-8AAA-ADEF-7805EAD30169"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03147CD1-E43D-28C4-ACD8-E6083867C542" name="ACTA_NACIMIENTO_MUNICIPIO_FK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>BCD258C5-28FA-F1AB-F4B5-C3F5ABE9320E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E22C761A-67CF-3B95-ECC4-86B3BA1494C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

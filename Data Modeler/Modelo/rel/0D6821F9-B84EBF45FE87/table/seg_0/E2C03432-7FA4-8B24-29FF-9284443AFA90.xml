@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E2C03432-7FA4-8B24-29FF-9284443AFA90" name="ACTA_DIVORCIO">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>476A0F4F-5967-0701-4001-E9ACB486198E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_acta" id="58A8A785-3BC7-A91C-3BB0-4D97AA0A0AC1">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>3C985500-27EC-12B8-6D9C-753151EE0FF3</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_divorcio" id="51FE0860-B61B-0C50-3FD8-3A6B831619AD">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>C02E930B-1501-A595-72EC-D0EF39E7D3E5</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cui_hombre" id="2D20E31F-7919-E131-71FD-5BE3635A3E25">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>9AA5E000-709C-1E24-6217-7BFFB9EBB56B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0A38A40E-C43E-57D7-00C9-482167CE2316" referredColumn="A008160B-EA88-27C5-E961-BA799732D625"/>
+</associations>
+</Column>
+<Column name="cui_mujer" id="7BE62105-7CFA-F36E-C112-2325DE23D48A">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>8E04F4A5-D6B0-4257-93DF-689841866C07</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A5A6FD9-EB35-B7F4-1B6B-FEEEE0AFA47B" referredColumn="A008160B-EA88-27C5-E961-BA799732D625"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ECC6C630-2478-43B7-6233-E8E41207AA1A" name="ACTA_DIVORCIO_PK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>984EFED4-192B-42E5-AACB-795164A2EDFD</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58A8A785-3BC7-A91C-3BB0-4D97AA0A0AC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50F2BAA8-CECE-2983-6ED1-3EA099BC606E" name="ACTA_DIVORCIO_PERSONA_FK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>33F7ACE8-E7E2-0315-15F6-12F67EF32B53</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D20E31F-7919-E131-71FD-5BE3635A3E25"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8297DC14-26AE-85F3-939C-A021831DB49A" name="ACTA_DIVORCIO_PERSONA_FKv2">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>F1A722A4-491B-7342-3BF7-1130B09B92C4</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7BE62105-7CFA-F36E-C112-2325DE23D48A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

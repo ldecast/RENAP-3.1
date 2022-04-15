@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="476A0F4F-5967-0701-4001-E9ACB486198E" name="ACTA_DIVORCIO">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:09:16 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_acta" id="3C985500-27EC-12B8-6D9C-753151EE0FF3">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:09:25 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha_divorcio" id="C02E930B-1501-A595-72EC-D0EF39E7D3E5">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:09:35 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cui_hombre" id="9AA5E000-709C-1E24-6217-7BFFB9EBB56B">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:43:14 UTC</createdTime>
+<generatorID>33F7ACE8-E7E2-0315-15F6-12F67EF32B53</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<referedAttribute>9C88A5B5-9824-237F-ABB1-6C0782A1A077</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cui_mujer" id="8E04F4A5-D6B0-4257-93DF-689841866C07">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:43:29 UTC</createdTime>
+<generatorID>F1A722A4-491B-7342-3BF7-1130B09B92C4</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<referedAttribute>9C88A5B5-9824-237F-ABB1-6C0782A1A077</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="984EFED4-192B-42E5-AACB-795164A2EDFD" name="ACTA_DIVORCIO PK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:09:33 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="0D6821F9-D5C4-257A-03CB-B84EBF45FE87" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3C985500-27EC-12B8-6D9C-753151EE0FF3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

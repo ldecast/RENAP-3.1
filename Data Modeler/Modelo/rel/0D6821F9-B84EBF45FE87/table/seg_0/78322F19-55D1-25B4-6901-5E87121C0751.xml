@@ -1,0 +1,123 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="78322F19-55D1-25B4-6901-5E87121C0751" name="ACTA_DEFUNCION">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>F5FB0544-C8D3-1AEF-3050-5CD601903E53</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_acta" id="4659955F-3CE2-DE9F-4A55-2345B6B4866B">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>C12ECB30-6776-1B55-26EB-F94FF9055742</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fecha_fallecimiento" id="1909F350-4567-E7C0-1874-8B62894F9EFB">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>269225F6-8279-3F05-53A7-FDC3CCA3B404</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="motivo" id="96D9B8D1-C251-C2D1-5D8B-C356F1F16A77">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>C17ABB98-4F78-791D-42F7-1B861D64483F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MUNICIPIO_id_municipio" id="8FB71C11-EB81-C37B-1944-D53646132A30">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>34D047ED-A2CA-0C23-BDA3-24E6E8AF98FB</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D09FB84A-F87B-0A4B-CDBF-981B8E724B60" referredColumn="B3E867EB-1FDF-9FB4-AD37-24E68B00F7D3"/>
+</associations>
+</Column>
+<Column name="PERSONA_cui" id="C5F3C918-72C5-9C5D-837E-009023054CCF">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>5B1349EF-E5D2-209A-21C2-312EA518D964</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BEB26658-0ADC-4057-29BE-7B1DD21C7398" referredColumn="A008160B-EA88-27C5-E961-BA799732D625"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="00470227-C2CB-C7F2-6748-1BFF6421AB4D" name="ACTA_DEFUNCION_PK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>090F5CB6-0720-FCE6-8802-31D11B47BDFC</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4659955F-3CE2-DE9F-4A55-2345B6B4866B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="05642442-3D1E-8BBD-9405-5409190C6FC0" name="ACTA_DEFUNCION__IDX">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>6A245305-AC42-0E63-EE05-5137FD4B4DBE</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="C5F3C918-72C5-9C5D-837E-009023054CCF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="76540CD2-FCF6-BA09-65C7-8F0557C76734" name="ACTA_DEFUNCION_PERSONA_FK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>6A245305-AC42-0E63-EE05-5137FD4B4DBE</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5F3C918-72C5-9C5D-837E-009023054CCF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4DF37030-7A81-DF14-A333-181EB1F4D9A7" name="ACTA_DEFUNCION_MUNICIPIO_FK">
+<createdBy>root</createdBy>
+<createdTime>2022-04-15 02:50:32 UTC</createdTime>
+<generatorID>F02F8005-8D83-C550-7060-5FDC4EFB3422</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8FB71C11-EB81-C37B-1944-D53646132A30"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
