@@ -7,7 +7,7 @@ CREATE TABLE acta_defuncion (
     fecha_fallecimiento    DATE NOT NULL,
     motivo                 VARCHAR(255) NOT NULL,
     municipio_id_municipio INTEGER NOT NULL,
-    persona_cui            INTEGER NOT NULL
+    persona_cui            BIGINT NOT NULL
 );
 
 ALTER TABLE acta_defuncion ADD PRIMARY KEY (id_acta);
@@ -15,8 +15,8 @@ ALTER TABLE acta_defuncion ADD PRIMARY KEY (id_acta);
 CREATE TABLE acta_divorcio (
     id_acta        INTEGER NOT NULL,
     fecha_divorcio DATE NOT NULL,
-    cui_hombre     INTEGER NOT NULL,
-    cui_mujer      INTEGER NOT NULL
+    cui_hombre     BIGINT NOT NULL,
+    cui_mujer      BIGINT NOT NULL
 );
 
 ALTER TABLE acta_divorcio ADD PRIMARY KEY (id_acta);
@@ -24,20 +24,20 @@ ALTER TABLE acta_divorcio ADD PRIMARY KEY (id_acta);
 CREATE TABLE acta_matrimonio (
     id_acta          INTEGER NOT NULL,
     fecha_matrimonio DATE NOT NULL,
-    cui_hombre       INTEGER NOT NULL,
-    cui_mujer        INTEGER NOT NULL
+    cui_hombre       BIGINT NOT NULL,
+    cui_mujer        BIGINT NOT NULL
 );
 
 ALTER TABLE acta_matrimonio ADD PRIMARY KEY (id_acta);
 
 CREATE TABLE acta_nacimiento (
     id_acta                INTEGER NOT NULL,
-    cui_madre              INTEGER NOT NULL,
-    cui_padre              INTEGER NOT NULL,
+    cui_madre              BIGINT NOT NULL,
+    cui_padre              BIGINT NOT NULL,
     fecha_nacimiento       DATE NOT NULL,
     genero                 VARCHAR(1) NOT NULL,
     municipio_id_municipio INTEGER NOT NULL,
-    persona_cui            INTEGER NOT NULL
+    persona_cui            BIGINT NOT NULL
 );
 
 ALTER TABLE acta_nacimiento ADD PRIMARY KEY (id_acta);
@@ -61,7 +61,7 @@ CREATE TABLE licencia (
     fecha_emision      DATE NOT NULL,
     fecha_vencimiento  DATE NOT NULL,
     anulada            BOOLEAN NOT NULL,
-    persona_cui        INTEGER NOT NULL,
+    persona_cui        BIGINT NOT NULL,
     tipo_licencia_tipo VARCHAR(1) NOT NULL
 );
 
@@ -76,16 +76,18 @@ CREATE TABLE municipio (
 ALTER TABLE municipio ADD PRIMARY KEY (id_municipio);
 
 CREATE TABLE persona (
-    cui                    INTEGER NOT NULL,
-    primer_nombre          VARCHAR(1) NOT NULL,
+    no_registro INT(9) ZEROFILL NOT NULL AUTO_INCREMENT,
+    cui                    BIGINT NOT NULL UNIQUE,
+    primer_nombre          VARCHAR(50) NOT NULL,
     segundo_nombre         VARCHAR(50),
     tercer_nombre          VARCHAR(50),
     primer_apellido        VARCHAR(50) NOT NULL,
     segundo_apellido       VARCHAR(50),
-    estado_civil_id_estado INTEGER NOT NULL
+    estado_civil_id_estado INTEGER NOT NULL,
+    primary key(no_registro)
 );
 
-ALTER TABLE persona ADD PRIMARY KEY (cui);
+-- ALTER TABLE persona ADD PRIMARY KEY (no_registro);
 
 CREATE TABLE tipo_licencia (
     tipo        VARCHAR(1) NOT NULL,
