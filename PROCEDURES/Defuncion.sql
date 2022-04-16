@@ -15,11 +15,13 @@ DECLARE estado_civil INTEGER;
 
 /* NO EXISTE */
 IF (ExistePersona(cui_fallecido) = 0) THEN
+    SELECT 'LA PERSONA NO EXISTE.' AS ERROR;
     LEAVE def_proc;
 END IF;
 
 /* YA FALLECIDO */
 IF (PersonaViva(cui_fallecido) = 0) THEN
+    SELECT 'LA PERSONA YA SE ENCUENTRA FALLECIDA.' AS ERROR;
     LEAVE def_proc;
 END IF;
 
@@ -36,6 +38,7 @@ END IF;
 
 /* FECHA INCONGRUENTE */
 IF (format_fecha > CURDATE() OR format_fecha < fecha_nac) THEN
+    SELECT 'LA FECHA ES INCONGRUENTE.' AS ERROR;
     LEAVE def_proc;
 END IF;
 
@@ -48,9 +51,7 @@ END IF;
 
 /* SI ESTÁ CASADO, ENVIUDAR CONYUGE */
 IF (estado_civil = 2) THEN
-    /* SELECT IF(cui_hombre=0000000011101, cui_hombre, cui_mujer)
-    FROM acta_matrimonio
-    WHERE cui_hombre = 0000000011101 OR cui_mujer = 0000000011101 */
+    SELECT 'ENVIDIAR CONYUGE';
 END IF;
 
 /* ACTA DE DEFUNCIÓN */
@@ -66,5 +67,8 @@ VALUES (
         codigo_municipio,
         cui_fallecido
     );
+
+/* MENSAJE */
+SELECT 'DEFUNCIÓN REGISTRADA' AS MENSAJE;
 
 END $$

@@ -19,6 +19,7 @@ DECLARE fecha DATE;
 );
 
 IF (fecha > CURDATE()) THEN
+    SELECT 'FECHA POSTERIOR A LA FECHA DE REGISTRO.' AS ERROR;
     LEAVE nac_proc;
 END IF;
 
@@ -41,6 +42,7 @@ END IF;
             FROM persona
         ) = no_registro
 );
+
 /* PERSONA */
 INSERT INTO persona (
         cui,
@@ -68,6 +70,7 @@ VALUES (
         ),
         1
     );
+
 /* ACTA DE NACIMIENTO */
 INSERT INTO acta_nacimiento (
         cui_padre,
@@ -85,4 +88,8 @@ VALUES (
         codigo_municipio,
         cui
     );
+
+/* MENSAJE */
+SELECT 'NACIMIENTO REGISTRADO' AS MENSAJE;
+
 END $$

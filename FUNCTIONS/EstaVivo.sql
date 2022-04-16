@@ -10,7 +10,7 @@ BEGIN
 DECLARE vivo BOOLEAN;
 
 (
-    SELECT EXISTS (SELECT 1 FROM acta_defuncion ad WHERE ad.persona_cui = cui) INTO vivo
+    SELECT NOT EXISTS (SELECT 1 FROM acta_defuncion ad WHERE ad.persona_cui = cui) INTO vivo
 );
             
 -- return the boolean  
