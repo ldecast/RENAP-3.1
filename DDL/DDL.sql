@@ -3,98 +3,87 @@ CREATE DATABASE RENAP;
 USE RENAP;
 
 CREATE TABLE acta_defuncion (
-    id_acta                INTEGER NOT NULL,
+    id_acta                INTEGER NOT NULL AUTO_INCREMENT,
     fecha_fallecimiento    DATE NOT NULL,
     motivo                 VARCHAR(255) NOT NULL,
     municipio_id_municipio INTEGER NOT NULL,
-    persona_cui            BIGINT NOT NULL
+    persona_cui            INT(13) ZEROFILL NOT NULL,
+    PRIMARY KEY(id_acta)
 );
-
-ALTER TABLE acta_defuncion ADD PRIMARY KEY (id_acta);
 
 CREATE TABLE acta_divorcio (
-    id_acta        INTEGER NOT NULL,
+    id_acta        INTEGER NOT NULL AUTO_INCREMENT,
     fecha_divorcio DATE NOT NULL,
-    cui_hombre     BIGINT NOT NULL,
-    cui_mujer      BIGINT NOT NULL
+    cui_hombre     INT(13) ZEROFILL NOT NULL,
+    cui_mujer      INT(13) ZEROFILL NOT NULL,
+    PRIMARY KEY(id_acta)
 );
-
-ALTER TABLE acta_divorcio ADD PRIMARY KEY (id_acta);
 
 CREATE TABLE acta_matrimonio (
-    id_acta          INTEGER NOT NULL,
+    id_acta          INTEGER NOT NULL AUTO_INCREMENT,
     fecha_matrimonio DATE NOT NULL,
-    cui_hombre       BIGINT NOT NULL,
-    cui_mujer        BIGINT NOT NULL
+    cui_hombre       INT(13) ZEROFILL NOT NULL,
+    cui_mujer        INT(13) ZEROFILL NOT NULL,
+    PRIMARY KEY(id_acta)
 );
 
-ALTER TABLE acta_matrimonio ADD PRIMARY KEY (id_acta);
-
 CREATE TABLE acta_nacimiento (
-    id_acta                INTEGER NOT NULL,
-    cui_madre              BIGINT NOT NULL,
-    cui_padre              BIGINT NOT NULL,
+    id_acta                INTEGER NOT NULL AUTO_INCREMENT,
+    cui_madre              INT(13) ZEROFILL NOT NULL,
+    cui_padre              INT(13) ZEROFILL NOT NULL,
     fecha_nacimiento       DATE NOT NULL,
     genero                 VARCHAR(1) NOT NULL,
     municipio_id_municipio INTEGER NOT NULL,
-    persona_cui            BIGINT NOT NULL
+    persona_cui            INT(13) ZEROFILL NOT NULL,
+    PRIMARY KEY(id_acta)
 );
-
-ALTER TABLE acta_nacimiento ADD PRIMARY KEY (id_acta);
 
 CREATE TABLE departamento (
     id_departamento INTEGER NOT NULL,
-    nombre          VARCHAR(50) NOT NULL
+    nombre          VARCHAR(50) NOT NULL,
+    PRIMARY KEY(id_departamento)
 );
-
-ALTER TABLE departamento ADD PRIMARY KEY (id_departamento);
 
 CREATE TABLE estado_civil (
     id_estado INTEGER NOT NULL,
-    nombre    VARCHAR(25) NOT NULL
+    nombre    VARCHAR(25) NOT NULL,
+    PRIMARY KEY(id_estado)
 );
 
-ALTER TABLE estado_civil ADD PRIMARY KEY (id_estado);
-
 CREATE TABLE licencia (
-    id_licencia        INTEGER NOT NULL,
+    id_licencia        INTEGER NOT NULL AUTO_INCREMENT,
     fecha_emision      DATE NOT NULL,
     fecha_vencimiento  DATE NOT NULL,
     anulada            BOOLEAN NOT NULL,
-    persona_cui        BIGINT NOT NULL,
-    tipo_licencia_tipo VARCHAR(1) NOT NULL
+    persona_cui        INT(13) ZEROFILL NOT NULL,
+    tipo_licencia_tipo VARCHAR(1) NOT NULL,
+    PRIMARY KEY(id_licencia)
 );
-
-ALTER TABLE licencia ADD PRIMARY KEY (id_licencia);
 
 CREATE TABLE municipio (
     id_municipio                 INTEGER NOT NULL,
     nombre                       VARCHAR(50) NOT NULL,
-    departamento_id_departamento INTEGER NOT NULL
+    departamento_id_departamento INTEGER NOT NULL,
+    PRIMARY KEY(id_municipio)
 );
-
-ALTER TABLE municipio ADD PRIMARY KEY (id_municipio);
 
 CREATE TABLE persona (
     no_registro INT(9) ZEROFILL NOT NULL AUTO_INCREMENT,
-    cui                    BIGINT NOT NULL UNIQUE,
+    cui                    INT(13) ZEROFILL NOT NULL UNIQUE,
     primer_nombre          VARCHAR(50) NOT NULL,
     segundo_nombre         VARCHAR(50),
     tercer_nombre          VARCHAR(50),
     primer_apellido        VARCHAR(50) NOT NULL,
     segundo_apellido       VARCHAR(50),
     estado_civil_id_estado INTEGER NOT NULL,
-    primary key(no_registro)
+    PRIMARY KEY(no_registro)
 );
-
--- ALTER TABLE persona ADD PRIMARY KEY (no_registro);
 
 CREATE TABLE tipo_licencia (
     tipo        VARCHAR(1) NOT NULL,
-    descripcion VARCHAR(255) NOT NULL
+    descripcion VARCHAR(255) NOT NULL,
+    PRIMARY KEY(tipo)
 );
-
-ALTER TABLE tipo_licencia ADD PRIMARY KEY (tipo);
 
 ALTER TABLE acta_defuncion
     ADD FOREIGN KEY (municipio_id_municipio)
