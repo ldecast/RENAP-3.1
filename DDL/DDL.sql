@@ -75,7 +75,8 @@ CREATE TABLE persona (
     tercer_nombre          VARCHAR(50),
     primer_apellido        VARCHAR(50) NOT NULL,
     segundo_apellido       VARCHAR(50),
-    estado_civil_id_estado INTEGER NOT NULL,
+    estado_civil_id_estado INTEGER NOT NULL DEFAULT 1,
+    dpi_generado           BOOLEAN NOT NULL DEFAULT 0,
     PRIMARY KEY(no_registro)
 );
 
