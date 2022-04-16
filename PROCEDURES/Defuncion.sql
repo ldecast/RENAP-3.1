@@ -51,7 +51,9 @@ END IF;
 
 /* SI ESTÁ CASADO, ENVIUDAR CONYUGE */
 IF (estado_civil = 2) THEN
-    SELECT 'ENVIDIAR CONYUGE';
+    UPDATE persona
+    SET estado_civil_id_estado = 4, cui_conyuge = NULL
+    WHERE cui_conyuge = cui_fallecido;
 END IF;
 
 /* ACTA DE DEFUNCIÓN */

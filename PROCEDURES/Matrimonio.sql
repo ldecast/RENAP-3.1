@@ -70,6 +70,16 @@ VALUES (
         dpi_mujer
     );
 
+/* ACTUALIZAR ESTADO CIVIL */
+UPDATE persona
+SET estado_civil_id_estado = 2, cui_conyuge = dpi_mujer
+WHERE cui = dpi_hombre;
+
+UPDATE persona
+SET estado_civil_id_estado = 2, cui_conyuge = dpi_hombre
+WHERE cui = dpi_mujer;
+
+
 /* MENSAJE */
 SELECT 'MATRIMONIO REGISTRADO' AS MENSAJE;
 

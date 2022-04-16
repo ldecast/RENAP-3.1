@@ -77,6 +77,7 @@ CREATE TABLE persona (
     segundo_apellido       VARCHAR(50),
     estado_civil_id_estado INTEGER NOT NULL DEFAULT 1,
     dpi_generado           BOOLEAN NOT NULL DEFAULT 0,
+    cui_conyuge            INT(13) ZEROFILL,
     PRIMARY KEY(no_registro)
 );
 
