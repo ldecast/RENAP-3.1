@@ -34,8 +34,8 @@ VALUES
     ('E', 'La licencia tipo E permite a la persona conducir maquinaria agrícola e industrial, únicamente. Con este tipo de licencia, no se puede manejar cualquier otro vehículo.');
 
 /* PERSONA */
-INSERT INTO
-    persona (cui, primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, estado_civil_id_estado)
-VALUES
-    (3006240181101, 'Luis', 'Danniel', 'Ernesto', 'Castellanos', 'Galindo', 1);
+-- INSERT INTO
+--     persona (cui, primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, estado_civil_id_estado)
+-- VALUES
+--     (3006240181101, 'Luis', 'Danniel', 'Ernesto', 'Castellanos', 'Galindo', 1);
 
