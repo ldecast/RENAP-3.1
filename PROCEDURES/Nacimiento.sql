@@ -50,8 +50,7 @@ INSERT INTO persona (
         segundo_nombre,
         tercer_nombre,
         primer_apellido,
-        segundo_apellido,
-        estado_civil_id_estado
+        segundo_apellido
     )
 VALUES (
         cui,
@@ -67,8 +66,7 @@ VALUES (
             SELECT p.primer_apellido
             FROM persona p
             WHERE p.cui = dpi_madre
-        ),
-        1
+        )
     );
 
 /* ACTA DE NACIMIENTO */

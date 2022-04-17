@@ -54,7 +54,7 @@ CREATE TABLE licencia (
     id_licencia        INTEGER NOT NULL AUTO_INCREMENT,
     fecha_emision      DATE NOT NULL,
     fecha_vencimiento  DATE NOT NULL,
-    anulada            BOOLEAN NOT NULL,
+    anulada            BOOLEAN NOT NULL DEFAULT 0,
     persona_cui        INT(13) ZEROFILL NOT NULL,
     tipo_licencia_tipo VARCHAR(1) NOT NULL,
     PRIMARY KEY(id_licencia)
