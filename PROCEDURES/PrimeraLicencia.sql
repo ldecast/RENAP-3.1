@@ -1,15 +1,14 @@
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS AddLicencia $$ CREATE PROCEDURE AddLicencia(
-    IN cui_persona INTEGER,
+    IN cui_persona BIGINT,
     IN fecha_emision VARCHAR(10),
     IN tipo_licencia VARCHAR(1)
 )
 
 primerlic_proc:BEGIN
 
-DECLARE format_fecha DATE;
-DECLARE estado_civil_hombre, estado_civil_mujer INTEGER;
+DECLARE format_fecha, fecha_nac DATE;
 
 
 /* NO EXISTE */
@@ -38,7 +37,8 @@ IF (format_fecha > CURDATE()) THEN
 END IF;
 
 /* VALIDAR EDAD */
-IF (SELECT TIMESTAMPDIFF(YEAR, format_fecha, CURDATE()) < 16) THEN
+(SELECT fecha_nacimiento INTO fecha_nac FROM acta_nacimiento WHERE persona_cui = cui_persona);
+IF (SELECT TIMESTAMPDIFF(YEAR, fecha_nac, CURDATE()) < 16) THEN
     SELECT 'LA EDAD MÍNIMA PARA LICENCIA ES DE 16.' AS ERROR;
     LEAVE primerlic_proc;
 END IF;

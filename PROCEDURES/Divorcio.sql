@@ -8,7 +8,7 @@ DROP PROCEDURE IF EXISTS AddDivorcio $$ CREATE PROCEDURE AddDivorcio(
 divor_proc:BEGIN
 
 DECLARE format_fecha DATE;
-DECLARE dpi_hombre, dpi_mujer INTEGER;
+DECLARE dpi_hombre, dpi_mujer BIGINT;
 DECLARE estado_civil_hombre, estado_civil_mujer INTEGER;
 
 /* OBTENER DPI DE AMBOS */

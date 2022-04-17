@@ -11,7 +11,7 @@ DROP PROCEDURE IF EXISTS AddNacimiento $$ CREATE PROCEDURE AddNacimiento(
 )
 nac_proc:BEGIN
 
-DECLARE cui INTEGER;
+DECLARE cui BIGINT;
 DECLARE fecha DATE;
 
 (
