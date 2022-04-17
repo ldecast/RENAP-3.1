@@ -9,7 +9,7 @@ DROP PROCEDURE IF EXISTS renewLicencia $$ CREATE PROCEDURE renewLicencia(
 
 renovlic_proc:BEGIN
 
-DECLARE format_fecha, fecha_nac DATE;
+DECLARE format_fecha, fecha_nac, fecha_pre_anulada DATE;
 DECLARE cui_persona BIGINT;
 DECLARE pre_lic INTEGER DEFAULT 0;
 
@@ -28,10 +28,18 @@ IF (PersonaViva(cui_persona) = 0) THEN
     LEAVE renovlic_proc;
 END IF;
 
-/* ESTÁ ANULADA */
-IF (SELECT anulada FROM licencia WHERE id_licencia = no_licencia) THEN
-    SELECT 'LA LICENCIA SE ENCUENTRA ANULADA.' AS ERROR;
-    LEAVE renovlic_proc;
+/* VALIDAR SI ESTÁ ANULADA */
+(SELECT fecha_anulada INTO fecha_pre_anulada FROM licencia WHERE id_licencia = no_licencia);
+IF (fecha_pre_anulada != NULL) THEN
+    /* NO HAN PASADO LOS 2 AÑOS */
+    IF (SELECT TIMESTAMPDIFF(YEAR, fecha_pre_anulada, CURDATE()) < 2) THEN
+        SELECT 'NO HA CUMPLIDO LOS 2 AÑOS DE LICENCIA ANULADA.' AS ERROR;
+        LEAVE renovlic_proc;
+    END IF;
+    /* VALIDAR LICENCIA DE NUEVO */
+    UPDATE licencia
+    SET fecha_anulada = NULL
+    WHERE id_licencia = no_licencia;
 END IF;
 
 /* VALIDAR FECHA */
