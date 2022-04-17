@@ -78,6 +78,7 @@ CREATE TABLE persona (
     estado_civil_id_estado INTEGER NOT NULL DEFAULT 1,
     dpi_generado           BOOLEAN NOT NULL DEFAULT 0,
     cui_conyuge            INT(13) ZEROFILL,
+    municipio_reside       INTEGER,
     PRIMARY KEY(no_registro)
 );
 
@@ -134,3 +135,11 @@ ALTER TABLE municipio
 ALTER TABLE persona
     ADD FOREIGN KEY (estado_civil_id_estado)
         REFERENCES estado_civil (id_estado);
+
+ALTER TABLE persona
+    ADD FOREIGN KEY (municipio_reside)
+        REFERENCES municipio (id_municipio);
+
+ALTER TABLE persona
+    ADD FOREIGN KEY (cui_conyuge)
+        REFERENCES persona (cui);
