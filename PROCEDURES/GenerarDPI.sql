@@ -9,7 +9,6 @@ DROP PROCEDURE IF EXISTS generarDPI $$ CREATE PROCEDURE generarDPI(
 gendpi_proc:BEGIN
 
 DECLARE format_fecha DATE;
-DECLARE cui_persona BIGINT;
 
 /* NO EXISTE */
 IF (ExistePersona(cui_persona) = 0) THEN

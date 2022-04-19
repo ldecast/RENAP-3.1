@@ -32,10 +32,3 @@ VALUES
     ('C', 'Es la más común y es la que se otorga al sacar la primera licencia. No necesita ninguna edad mínima ni haber tenido otro tipo de licencia. Permite, sin recibir remuneración, manejar un peso máximo de 3.5 toneladas métricas de peso.'),
     ('M', 'Este tipo de licencia únicamente permite manejar motocicletas o moto bicicletas.'),
     ('E', 'La licencia tipo E permite a la persona conducir maquinaria agrícola e industrial, únicamente. Con este tipo de licencia, no se puede manejar cualquier otro vehículo.');
-
-/* PERSONA */
--- INSERT INTO
---     persona (cui, primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, estado_civil_id_estado)
--- VALUES
---     (3006240181101, 'Luis', 'Danniel', 'Ernesto', 'Castellanos', 'Galindo', 1);
-

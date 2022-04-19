@@ -16,6 +16,7 @@ CREATE TABLE acta_divorcio (
     fecha_divorcio DATE NOT NULL,
     cui_hombre     INT(13) ZEROFILL NOT NULL,
     cui_mujer      INT(13) ZEROFILL NOT NULL,
+    id_matrimonio  INTEGER NOT NULL,
     PRIMARY KEY(id_acta)
 );
 

@@ -33,9 +33,9 @@ END IF;
 
 /* VALIDAR QUE ESTÉN CASADOS ENTRE ELLOS */
 IF (
-    (SELECT cui_conyuge FROM persona WHERE cui = dpi_hombre != dpi_mujer)
+    ((SELECT cui_conyuge FROM persona WHERE cui = dpi_hombre) != dpi_mujer)
     OR
-    (SELECT cui_conyuge FROM persona WHERE cui = dpi_mujer != dpi_hombre)
+    ((SELECT cui_conyuge FROM persona WHERE cui = dpi_mujer) != dpi_hombre)
 ) THEN
     SELECT 'LA PAREJA TIENE OTRO MATRIMONIO ACTIVO.' AS ERROR;
     LEAVE divor_proc;
@@ -54,12 +54,14 @@ END IF;
 INSERT INTO acta_divorcio (
         fecha_divorcio,
         cui_hombre,
-        cui_mujer
+        cui_mujer,
+        id_matrimonio
     )
 VALUES (
         format_fecha,
         dpi_hombre,
-        dpi_mujer
+        dpi_mujer,
+        acta_matrimonio
     );
 
 /* ACTUALIZAR ESTADO CIVIL */

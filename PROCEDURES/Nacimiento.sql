@@ -13,11 +13,26 @@ nac_proc:BEGIN
 
 DECLARE cui BIGINT;
 DECLARE fecha DATE;
+DECLARE genero_padre, genero_madre VARCHAR(1);
 
-(
-    SELECT STR_TO_DATE(fecha_nacimiento, '%d-%m-%Y') INTO fecha
-);
+/* NO EXISTE */
+IF (ExistePersona(dpi_padre) = 0 OR ExistePersona(dpi_madre) = 0) THEN
+    SELECT 'DPI PADRE O MADRE INCORRECTOS.' AS ERROR;
+    LEAVE nac_proc;
+END IF;
 
+/* OBTENER GÉNEROS */
+(SELECT genero INTO genero_padre FROM acta_nacimiento WHERE persona_cui = dpi_padre);
+(SELECT genero INTO genero_madre FROM acta_nacimiento WHERE persona_cui = dpi_madre);
+
+/* VALIDAR GÉNEROS */
+IF (genero_padre != 'M' OR genero_madre != 'F') THEN
+    SELECT 'LOS GÉNEROS DE LOS PADRES NO CORRESPONDEN.' AS ERROR;
+    LEAVE nac_proc;
+END IF;
+
+/* FECHA INCONGRUENTE */
+(SELECT STR_TO_DATE(fecha_nacimiento, '%d-%m-%Y') INTO fecha);
 IF (fecha > CURDATE()) THEN
     SELECT 'FECHA POSTERIOR A LA FECHA DE REGISTRO.' AS ERROR;
     LEAVE nac_proc;
