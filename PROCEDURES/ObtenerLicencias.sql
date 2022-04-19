@@ -18,7 +18,8 @@ SELECT
     CONCAT(p.primer_nombre, ' ', p.segundo_nombre, ' ', p.tercer_nombre) AS 'Nombres',
     CONCAT(p.primer_apellido, ' ', p.segundo_apellido) AS 'Apellidos',
     l.fecha_emision AS 'FechaEmisión',
-    l.fecha_vencimiento AS 'FechaVencimiento'
+    l.fecha_vencimiento AS 'FechaVencimiento',
+    l.tipo_licencia_tipo AS 'TipoLicencia'
 FROM persona p
 INNER JOIN licencia l
 	ON l.persona_cui = p.cui
