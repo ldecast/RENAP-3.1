@@ -5,14 +5,14 @@ DROP PROCEDURE IF EXISTS AddNacimiento $$ CREATE PROCEDURE AddNacimiento(
     IN primer_nombre VARCHAR(50),
     IN segundo_nombre VARCHAR(50),
     IN tercer_nombre VARCHAR(50),
-    IN fecha_nacimiento VARCHAR(10),
+    IN in_fecha_nac VARCHAR(10),
     IN codigo_municipio INTEGER,
-    IN genero VARCHAR(1)
+    IN in_genero VARCHAR(1)
 )
 nac_proc:BEGIN
 
 DECLARE cui BIGINT;
-DECLARE fecha DATE;
+DECLARE fecha, fecha_nac_padre, fecha_nac_madre DATE;
 DECLARE genero_padre, genero_madre VARCHAR(1);
 
 /* NO EXISTE */
@@ -31,8 +31,26 @@ IF (genero_padre != 'M' OR genero_madre != 'F') THEN
     LEAVE nac_proc;
 END IF;
 
+/* VALIDAR EDADES */
+(SELECT fecha_nacimiento INTO fecha_nac_padre FROM acta_nacimiento WHERE persona_cui = dpi_padre);
+(SELECT fecha_nacimiento INTO fecha_nac_madre FROM acta_nacimiento WHERE persona_cui = dpi_madre);
+IF ((SELECT TIMESTAMPDIFF(YEAR, fecha_nac_padre, CURDATE()) < 18) OR (SELECT TIMESTAMPDIFF(YEAR, fecha_nac_madre, CURDATE()) < 18)) THEN
+    SELECT 'LOS PADRES NO PUEDEN SER MENORES DE EDAD.' AS ERROR;
+    LEAVE nac_proc;
+END IF;
+
+/* VALIDAR NOMBRES */
+IF (
+    (SELECT REGEXP_INSTR(primer_nombre, '[^a-zA-Z]') != 0) OR
+    (SELECT REGEXP_INSTR(segundo_nombre, '[^a-zA-Z]') != 0) OR
+    (SELECT REGEXP_INSTR(tercer_nombre, '[^a-zA-Z]') != 0)
+) THEN
+SELECT 'LOS NOMBRES SOLO PUEDEN CONTENER LETRAS.' AS ERROR;
+    LEAVE nac_proc;
+END IF;
+
 /* FECHA INCONGRUENTE */
-(SELECT STR_TO_DATE(fecha_nacimiento, '%d-%m-%Y') INTO fecha);
+(SELECT STR_TO_DATE(in_fecha_nac, '%d-%m-%Y') INTO fecha);
 IF (fecha > CURDATE()) THEN
     SELECT 'FECHA POSTERIOR A LA FECHA DE REGISTRO.' AS ERROR;
     LEAVE nac_proc;
@@ -97,7 +115,7 @@ VALUES (
         dpi_padre,
         dpi_madre,
         fecha,
-        genero,
+        in_genero,
         codigo_municipio,
         cui
     );

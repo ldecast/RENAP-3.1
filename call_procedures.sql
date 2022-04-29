@@ -31,6 +31,10 @@ CALL AddNacimiento(0000000281101, 0000000781101, 'Lorena', 'Mía', 'Estefanía',
 CALL AddNacimiento(0000000291101, 0000000791101, 'Estela', 'Linda', 'Rita', '25-01-1998', 701, 'F');
 CALL AddNacimiento(0000000301101, 0000000801101, 'Karen', 'Paola', '', '25-01-1999', 924, 'F');
 
+/* MENORES DE EDAD */
+CALL AddNacimiento(0000000301101, 0000000801101, 'Miriam', 'Estela', '', '13-08-2009', 101, 'F');
+CALL AddNacimiento(0000000301101, 0000000801101, 'Carlos', 'Alfredo', '', '02-03-2015', 301, 'M');
+
 /* GENERACIÓN DE DPI */
 CALL generarDPI(0000001011108, '01-01-2018', 108);
 CALL generarDPI(0000001023301, '01-01-2018', 108);
