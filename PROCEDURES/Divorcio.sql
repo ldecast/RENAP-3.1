@@ -53,14 +53,10 @@ END IF;
 /* ACTA DE DIVORCIO */
 INSERT INTO acta_divorcio (
         fecha_divorcio,
-        cui_hombre,
-        cui_mujer,
         id_matrimonio
     )
 VALUES (
         format_fecha,
-        dpi_hombre,
-        dpi_mujer,
         acta_matrimonio
     );
 

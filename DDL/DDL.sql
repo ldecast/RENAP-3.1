@@ -14,8 +14,6 @@ CREATE TABLE acta_defuncion (
 CREATE TABLE acta_divorcio (
     id_acta        INTEGER NOT NULL AUTO_INCREMENT,
     fecha_divorcio DATE NOT NULL,
-    cui_hombre     INT(13) ZEROFILL NOT NULL,
-    cui_mujer      INT(13) ZEROFILL NOT NULL,
     id_matrimonio  INTEGER NOT NULL,
     PRIMARY KEY(id_acta)
 );
@@ -97,14 +95,6 @@ ALTER TABLE acta_defuncion
     ADD FOREIGN KEY (persona_cui)
         REFERENCES persona (cui);
 
-ALTER TABLE acta_divorcio
-    ADD FOREIGN KEY (cui_hombre)
-        REFERENCES persona (cui);
-
-ALTER TABLE acta_divorcio
-    ADD FOREIGN KEY (cui_mujer)
-        REFERENCES persona (cui);
-
 ALTER TABLE acta_matrimonio
     ADD FOREIGN KEY (cui_hombre)
         REFERENCES persona (cui);
@@ -144,3 +134,7 @@ ALTER TABLE persona
 ALTER TABLE persona
     ADD FOREIGN KEY (cui_conyuge)
         REFERENCES persona (cui);
+
+ALTER TABLE acta_divorcio
+    ADD FOREIGN KEY (id_matrimonio)
+        REFERENCES acta_matrimonio (id_acta);
